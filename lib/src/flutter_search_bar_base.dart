@@ -142,6 +142,7 @@ class SearchBar {
           onPressed: () {
             onClosed?.call();
             controller.clear();
+            setState;
           }),
       backgroundColor: inBar ? null : theme.canvasColor,
       title: Directionality(
@@ -165,6 +166,7 @@ class SearchBar {
               controller.clear();
             }
             onSubmitted?.call(val);
+            setState;
           },
           autofocus: true,
           controller: controller,
