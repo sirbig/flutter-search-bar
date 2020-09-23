@@ -142,7 +142,6 @@ class SearchBar {
           onPressed: () {
             onClosed?.call();
             controller.clear();
-            Navigator.maybePop(context);
           }),
       backgroundColor: inBar ? null : theme.canvasColor,
       title: Directionality(
@@ -162,10 +161,6 @@ class SearchBar {
               border: InputBorder.none),
           onChanged: this.onChanged,
           onSubmitted: (String val) async {
-            if (closeOnSubmit) {
-              await Navigator.maybePop(context);
-            }
-
             if (clearOnSubmit) {
               controller.clear();
             }
